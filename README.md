@@ -21,33 +21,42 @@ release the buttons.
 - Geert-Jan Kreileman (GUI, design & fixes)
 - All contributors
 
-## Installation
+## LiveDVD
 
-### Use Re LiveDVD (everything ready to go, based on Ubuntu):
-User: user, Password:user (based on Ubuntu 22.04 LTS)
+Use Re LiveDVD (everything ready to go, based on Ubuntu 22.04 LTS).
 
-[Live DVD V4](https://www.androidfilehost.com/?fid=15664248565197184488)
+**Credentials**:
 
-[Live DVD V4 Mirror](https://drive.google.com/file/d/10OEw1d-Ul_96MuT3WxQ3iAHoPC4NhM_X/view?usp=sharing)
+  - User: `user`
+  - Password: `user` 
 
+**Download images**:
 
+  - [Live DVD V4](https://www.androidfilehost.com/?fid=15664248565197184488)
+
+  - [Live DVD V4 Mirror](https://drive.google.com/file/d/10OEw1d-Ul_96MuT3WxQ3iAHoPC4NhM_X/view?usp=sharing)
 
 ## Install
 
-### Linux  / Mac OS - (Ubuntu recommended, no patched kernel needed except for kamakiri)
+### Linux
 
-#### Install python >=3.8, git and other deps
+Ubuntu recommended, no patched kernel needed except for kamakiri.
 
-#### For Debian/Ubuntu
+#### Install dependencies
+
+Install python >=3.8, git and other deps.
+
+**Debian/Ubuntu**
 ```
 sudo apt install python3 git libusb-1.0-0 python3-pip
 ```
-#### For ArchLinux
+
+**ArchLinux**
 ```
 (sudo) pacman -S  python python-pip git libusb
-```
-or
-```
+
+# or
+
 yay -S python python-pip git libusb
 ```
 
@@ -70,6 +79,34 @@ sudo udevadm control -R
 Make sure to reboot after adding the user to dialout/plugdev. If the device
 has a vendor interface 0xFF (like LG), make sure to add "blacklist qcaux" to
 the "/etc/modprobe.d/blacklist.conf".
+
+---------------------------------------------------------------------------------------------------------------
+
+### macOS
+
+#### Install dependencies
+
+```bash
+brew install pyenv libusb
+pyenv install 3
+```
+
+#### Activate Python
+
+```bash
+pyenv global 3
+pyenv init
+```
+> Note: Follow `pyenv init` instructions.
+
+#### Grab files 
+```
+git clone https://github.com/bkerler/mtkclient
+cd mtkclient
+pip install -r requirements.txt
+python setup.py build
+python setup.py install
+```
 
 ---------------------------------------------------------------------------------------------------------------
 
